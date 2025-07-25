@@ -26,6 +26,14 @@
 
 ![Country Detector Demo](demo.png)
 
+---
+
+## 🌐 Live Demo
+
+👉 [View Live Project](https://itsVir.github.io/country-detector/)
+
+---
+
 ## 🛠️ How to Run Locally
 
 ```bash
