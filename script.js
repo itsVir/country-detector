@@ -10,18 +10,25 @@ const spinner = document.getElementById("spinner");
 detectBtn && (detectBtn.disabled = true);
 detectBtn && (detectBtn.innerText = "Loading...");
 
+// Helper to normalize dial codes: keep +, then digits only
+function normalizeDialCode(code) {
+  return code.replace(/[^\d+]/g, "");
+}
+
 fetch("countries.json")
   .then((res) => res.json())
   .then((data) => {
     countries = data.sort((a, b) => b.dial_code.length - a.dial_code.length);
-    countries.forEach((c) => dialCodeMap.set(c.dial_code, c));
+    countries.forEach((c) => {
+      dialCodeMap.set(normalizeDialCode(c.dial_code), c);
+    });
     detectBtn && (detectBtn.disabled = false);
     detectBtn && (detectBtn.innerText = "Detect");
     detect();
   });
 
 function validateDial(dialRaw) {
-  return /^\d{1,4}$/.test(dialRaw);
+  return /^\d{1,5}$/.test(dialRaw);
 }
 function validateNumber(number) {
   return /^\d{4,15}$/.test(number);
@@ -37,14 +44,15 @@ function detect() {
     dialInput.style.borderColor = "#e17055";
     numberInput.style.borderColor = "";
     result.innerHTML =
-      '<span style="color:#e17055;">❌ Please enter a valid dial code (1-4 digits).</span>';
+      '<span style="color:#e17055;">❌ Please enter a valid dial code (1-5 digits).</span>';
     if (spinner) spinner.style.display = "none";
     return;
   } else {
     dialInput.style.borderColor = "";
   }
 
-  const dial = "+" + dialRaw.replace(/\D/g, "");
+  // Normalize user input to match normalized dial codes
+  const dial = normalizeDialCode("+" + dialRaw.replace(/\D/g, ""));
   const match = dialCodeMap.get(dial);
 
   if (!match) {
