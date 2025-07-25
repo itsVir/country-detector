@@ -30,7 +30,7 @@
 
 ## 🌐 Live Demo
 
-👉 [View Live Project](https://itsVir.github.io/country-detector/)
+<a href="https://itsVir.github.io/country-detector/" target="_blank">View Live Project 🚀</a>
 
 ---
 
