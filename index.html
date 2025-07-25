@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Country Detector by Dial Code</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>📞 Country Detector</h2>
+
+        <div class="input-group">
+            <span>+</span>
+            <input type="text" id="dialInput" placeholder="Enter dial code (e.g. 91)" />
+        </div>
+        <input type="text" id="numberInput" placeholder="Enter local number (e.g. 9876543210)" />
+        <button onclick="detect()">Detect</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

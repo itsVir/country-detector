@@ -1,0 +1,174 @@
+body {
+    font-family    : 'Segoe UI', Arial, sans-serif;
+    background     : linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    background-size: 200% 200%;
+    animation      : bgMove 8s ease-in-out infinite alternate;
+    min-height     : 100vh;
+    margin         : 0;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.container {
+    max-width      : 400px;
+    width          : 100%;
+    margin         : auto;
+    background     : rgba(255, 255, 255, 0.7);
+    padding        : 40px 30px 30px 30px;
+    border-radius  : 18px;
+    box-shadow     : 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(10px);
+    border         : 1.5px solid rgba(255, 255, 255, 0.5);
+    border-top     : 1.5px solid #ACB6E5;
+    border-left    : 1.5px solid #74ebd5;
+    animation      : popIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+h1,
+h2 {
+    text-align    : center;
+    color         : #333;
+    margin-bottom : 28px;
+    font-size     : 1.7rem;
+    letter-spacing: 1px;
+    text-shadow   : 0 2px 8px rgba(172, 182, 229, 0.08);
+}
+
+.input-group {
+    display      : flex;
+    align-items  : center;
+    gap          : 6px;
+    margin-bottom: 18px;
+    background   : rgba(255, 255, 255, 0.85);
+    border-radius: 7px;
+    border       : 1.5px solid #b2bec3;
+    box-shadow   : 0 1px 2px rgba(44, 62, 80, 0.04);
+    transition   : border 0.2s, box-shadow 0.2s;
+    padding      : 0 10px;
+    position     : relative;
+}
+
+.input-group:focus-within {
+    border    : 1.5px solid #74ebd5;
+    box-shadow: 0 0 0 2px #74ebd555;
+}
+
+.input-group span {
+    font-size    : 1.1em;
+    color        : #555;
+    user-select  : none;
+    margin-right : 2px;
+    margin-bottom: 1px;
+    display      : flex;
+    align-items  : center;
+    height       : 100%;
+}
+
+.input-group input[type="text"] {
+    border    : none;
+    outline   : none;
+    background: transparent;
+    padding   : 12px 0 12px 0;
+    font-size : 17px;
+    width     : 100%;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+
+.input-group input[type="text"]:focus {
+    background: transparent;
+}
+
+input[type="text"]:not(.input-group input) {
+    width        : 100%;
+    padding      : 12px 14px;
+    margin-bottom: 18px;
+    font-size    : 17px;
+    border       : 1.5px solid #b2bec3;
+    border-radius: 7px;
+    outline      : none;
+    transition   : border 0.2s, box-shadow 0.2s;
+    background   : rgba(255, 255, 255, 0.9);
+    box-shadow   : 0 1px 2px rgba(44, 62, 80, 0.04);
+    position     : relative;
+}
+
+input[type="text"]:not(.input-group input):focus {
+    border    : 1.5px solid #74ebd5;
+    box-shadow: 0 0 0 2px #74ebd555;
+}
+
+button {
+    width        : 100%;
+    padding      : 12px 0;
+    font-size    : 17px;
+    font-weight  : 600;
+    color        : #fff;
+    background   : linear-gradient(90deg, #74ebd5 0%, #ACB6E5 100%);
+    border       : none;
+    border-radius: 7px;
+    cursor       : pointer;
+    transition   : background 0.2s, transform 0.1s, box-shadow 0.2s, box-shadow 0.3s;
+    box-shadow   : 0 2px 8px rgba(44, 62, 80, 0.08);
+    margin-top   : 4px;
+    animation    : buttonPop 0.7s 0.2s backwards cubic-bezier(0.23, 1, 0.32, 1);
+    position     : relative;
+    z-index      : 1;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(90deg, #ACB6E5 0%, #74ebd5 100%);
+    transform : translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 24px 0 #74ebd5cc, 0 4px 16px rgba(44, 62, 80, 0.13);
+}
+
+@keyframes buttonPop {
+    0% {
+        opacity  : 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+#result {
+    margin-top   : 24px;
+    font-weight  : bold;
+    font-size    : 1.1rem;
+    color        : #2d3436;
+    text-align   : center;
+    min-height   : 28px;
+    padding      : 10px 0 0 0;
+    transition   : color 0.2s, transform 0.3s, box-shadow 0.3s;
+    animation    : fadeInResult 0.7s 0.3s backwards cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow   : 0 2px 12px 0 #ACB6E555;
+    border-radius: 8px;
+    background   : rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeInResult {
+    0% {
+        opacity  : 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
