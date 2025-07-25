@@ -11,12 +11,18 @@
     <div class="container">
         <h2>📞 Country Detector</h2>
 
-        <div class="input-group">
+        <div class="input-group" style="max-width: 110px;">
             <span>+</span>
-            <input type="text" id="dialInput" placeholder="Enter dial code (e.g. 91)" />
+            <input type="text" id="dialInput" placeholder="Code" maxlength="4"
+                style="width:60px; min-width:40px; text-align:center; font-size:16px;" />
         </div>
-        <input type="text" id="numberInput" placeholder="Enter local number (e.g. 9876543210)" />
-        <button onclick="detect()">Detect</button>
+        <input type="text" id="numberInput" placeholder="Enter local number (e.g. 9876543210)" maxlength="15"
+            style="width:calc(100% - 10px); font-size:17px;" />
+        <div style="font-size: 0.97em; color: #888; margin-bottom: 10px; text-align:center;">Detection is automatic as
+            you type.</div>
+        <div id="spinner" style="display:none; text-align:center; margin-bottom: 8px;">
+            <span class="spinner"></span>
+        </div>
 
         <div id="result"></div>
     </div>
