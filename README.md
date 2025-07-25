@@ -34,3 +34,8 @@ cd country-detector
 # 3. Open index.html in your browser
 start index.html   # On Windows
 open index.html    # On macOS
+
+## 📸 Demo
+
+![Country Detector Demo](demo.png)
+
