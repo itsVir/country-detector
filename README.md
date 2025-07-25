@@ -22,6 +22,10 @@
 
 ---
 
+## 📸 Demo
+
+![Country Detector Demo](demo.png)
+
 ## 🛠️ How to Run Locally
 
 ```bash
@@ -35,7 +39,5 @@ cd country-detector
 start index.html   # On Windows
 open index.html    # On macOS
 
-## 📸 Demo
 
-![Country Detector Demo](demo.png)
 
